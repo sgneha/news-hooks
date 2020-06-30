@@ -19,8 +19,9 @@ Fetch will return a promise.
 
 • Everything is on real time we are making lot of request(on every key stroke). Now we want only fetch the data when search button is clicked.
 • Implement onSubmit method which execute handleSubmit() when form is submitted.Prevent the default behaviour so that page is not free load. Set entire default url in one more state.when user hits submit the setUrl method changes the state of url according to the searchQuery(user input).And run the effect based on url.
+• Now we will show loading indicator when `loading=true`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
