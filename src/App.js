@@ -1,4 +1,4 @@
-import react, { Component, useState, useEffect } from "react";
+import React, { Component, useState, useEffect } from "react";
 
 const App = () => {
   //state
@@ -10,4 +10,17 @@ const App = () => {
       .then((data) => setNews(data.hits))
       .catch((error) => console.log(error)); //if error
   };
+
+  useEffect(() => {
+    fetchNews();
+  });
+  return (
+    <div>
+      <h2>news</h2>
+      {news.map((n, i) => (
+        <p key={i}>{n.title}</p>
+      ))}
+    </div>
+  );
 };
+export default App;
