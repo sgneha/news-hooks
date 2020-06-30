@@ -1,3 +1,8 @@
+News App using hooks
+Fetch news from Hacker news API
+First search news about react. Later will take user input to search news
+Fetch will return a promise.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
