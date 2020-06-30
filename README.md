@@ -2,21 +2,18 @@
 
 ##### Fetch news from Hacker news API
 
-First search news about react. Later will take user input to search news
+First search news about react. Later will take user input to search news.
 Fetch will return a promise.
 
-We want user to type the word to search so we have a form with text `value` as what user types and default value as 'react'. And a button `search`.
+• We want user to type the word to search so we have a form with text `value` as what user types and default value as 'react'. And a button `search`.
 
-onChange-> will execute some method like handle Change.whenever user types something we will grab the change and populate the state.
-handleChange->executes when change is there.It grabs the event target value means whatever is typed by the user is populated in the state.Means we need one more state i.e `searchQuery` which will eventually fetched.
-So based on user input we update the state. And then change the hard coded value `react` with `searchQuery` in the fetch method.
+• onChange-> will execute some method like handle Change.whenever user types something we will grab the change and populate the state.
+• handleChange->executes when change is there.It grabs the event target value means whatever is typed by the user is populated in the state.Means we need one more state i.e `searchQuery` which will eventually fetched.
+• So based on user input we update the state. And then change the hard coded value `react` with `searchQuery` in the fetch method.
 
-```
-So we fetch the news with searchQuery which comes from user input and this fetchNews() runs on useEffect() when component mounts or when there is change is state.
+`So we fetch the news with searchQuery which comes from user input and this fetchNews() runs on useEffect() when component mounts or when there is change is state.`
 
-```
-
-Its rendering a lot so the problem is useEffect(), we have to control its behaviour so that it runs only when there is change in state of `searchQuery`.Will see that next.
+• Its rendering a lot so the problem is useEffect(), we have to control its behaviour so that it runs only when there is change in state of `searchQuery`. Will see that next.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
