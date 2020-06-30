@@ -19,27 +19,37 @@ const App = () => {
   };
 
   useEffect(() => {
-    console.log("neha");
     fetchNews();
   }, [url]);
+
   const handleChange = (e) => {
     setsearchQuery(e.target.value);
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setUrl(`http://hn.algolia.com/api/v1/search?query=${searchQuery}`);
   };
+
+  const showLoading = () => (loading ? <h2>Loading...</h2> : "");
+
+  const searchForm = () => (
+    <form onSubmit={handleSubmit}>
+      <input type="text" value={searchQuery} onChange={handleChange} />
+      <button>Search</button>
+    </form>
+  );
+
+  const showNews = () => {
+    return news.map((n, i) => <p key={i}>{n.title}</p>); // return keyword because using curly braces
+  };
+
   return (
     <div>
       <h2>news</h2>
-      {loading ? <h2>Loading...</h2> : ""}
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={searchQuery} onChange={handleChange} />
-        <button>Search</button>
-      </form>
-      {news.map((n, i) => (
-        <p key={i}>{n.title}</p>
-      ))}
+      {showLoading()}
+      {searchForm()}
+      {showNews()}
     </div>
   );
 };
