@@ -13,8 +13,9 @@ const App = () => {
   };
 
   useEffect(() => {
+    console.log("neha");
     fetchNews();
-  });
+  }, [searchQuery]);
   const handleChange = (e) => {
     setsearchQuery(e.target.value);
   };
