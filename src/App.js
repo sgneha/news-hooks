@@ -4,9 +4,12 @@ const App = () => {
   //state
   const [news, setNews] = useState([]);
   const [searchQuery, setsearchQuery] = useState("react");
+  const [url, setUrl] = useState(
+    "http://hn.algolia.com/api/v1/search?query=react"
+  );
   //fetch news
   const fetchNews = () => {
-    fetch(`http://hn.algolia.com/api/v1/search?query=${searchQuery}`)
+    fetch(url) // when component mounts it takes default url and after that whenever url changes.
       .then((result) => result.json()) //convert it to json
       .then((data) => setNews(data.hits))
       .catch((error) => console.log(error)); //if error
@@ -15,14 +18,18 @@ const App = () => {
   useEffect(() => {
     console.log("neha");
     fetchNews();
-  }, [searchQuery]);
+  }, [url]);
   const handleChange = (e) => {
     setsearchQuery(e.target.value);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setUrl(`http://hn.algolia.com/api/v1/search?query=${searchQuery}`);
   };
   return (
     <div>
       <h2>news</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input type="text" value={searchQuery} onChange={handleChange} />
         <button>Search</button>
       </form>
