@@ -11,7 +11,8 @@ onChange-> will execute some method like handle Change.whenever user types somet
 handleChange->executes when change is there.It grabs the event target value means whatever is typed by the user is populated in the state.Means we need one more state i.e `searchQuery` which will eventually fetched.
 So based on user input we update the state. And then change the hard coded value `react` with `searchQuery` in the fetch method.
 
-```So we fetch the news with searchQuery which comes from user input and this fetchNews() runs on useEffect() when component mounts or when there is change is state.
+```
+So we fetch the news with searchQuery which comes from user input and this fetchNews() runs on useEffect() when component mounts or when there is change is state.
 
 ```
 
